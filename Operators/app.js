@@ -176,15 +176,24 @@ console.log('application Refused', applicationRefused); restituisce //applicatio
 /*
 
 LOGICAL OPERATOR WITH NON BOOLEANS, che significa tipo:
-let x = 5;
-let y = 10;
-console.log(x > 0 && y > 0); // true
 
-esempio pratico:
-let userColor = "red";
-let defaultColor = "blue";  
-let currentColor = userColor || defaultColor; // se userColor è una stringa vuota, allora currentColor sarà uguale a defaultColor
-se invece userColor è una stringa non vuota, allora currentColor sarà uguale a userColor, questo è utile per impostare un valore di default se una variabile non è definita o è vuota.
+Logical operator blablabla....altresi detti Truthy o Falsy --> Quando JavaScript valuta una condizione (if, while, operatori logici, ecc.), prova automaticamente a trasformare il valore in true o false.
+
+valori che JS considera falsi: undefined, null, 0, false, '', NaN
+esempio:
+let userColor = '';
+ 
+if (userColor) {
+console.log('Color found');
+} else {
+console.log('Default color');
+}   // Output Default color, perchè la stringa è vuota, quindi FALSY
+
+valori che JS considera veri: 'Cristiano',1,-1,[],{},'0','false'
+esempio:
+if ('Cristiano') {
+console.log('Vero');
+}  //vero, la strigna è valorizzata
 */
 
 /*
