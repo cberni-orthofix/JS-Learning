@@ -50,3 +50,19 @@ else if (robe === 'user') console.log('Welcome user!');
 else console.log('Welcome guest!');
 
 */
+
+
+
+
+
+/*
+Loops:
+- FOR che sta a significare che se ho 5 valori da ripetere con 5 console.log, allora usiamo una INCREMENT EXPRESSION, ecco un esempio:
+
+for (let i = 0; i < 5; i++) {
+console.log('Hello World');
+}
+
+- WHILE loops
+
+*/
