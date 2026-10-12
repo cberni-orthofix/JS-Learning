@@ -174,27 +174,172 @@ console.log('application Refused', applicationRefused); restituisce //applicatio
 
 
 /*
+TRUTHY E FALSY
 
-LOGICAL OPERATOR WITH NON BOOLEANS, che significa tipo:
+Quando JavaScript trova una condizione:
 
-Logical operator blablabla....altresi detti Truthy o Falsy --> Quando JavaScript valuta una condizione (if, while, operatori logici, ecc.), prova automaticamente a trasformare il valore in true o false.
+if (...)
+else
+while (...)
 
-valori che JS considera falsi: undefined, null, 0, false, '', NaN
-esempio:
+prova automaticamente a trasformare il valore in true o false.
+
+--------------------------------------------------
+
+FALSY (considerati false)
+
+false
+0
+''
+null
+undefined
+NaN
+
+Esempio:
+
 let userColor = '';
- 
-if (userColor) {
-console.log('Color found');
-} else {
-console.log('Default color');
-}   // Output Default color, perchè la stringa è vuota, quindi FALSY
 
-valori che JS considera veri: 'Cristiano',1,-1,[],{},'0','false'
-esempio:
-if ('Cristiano') {
-console.log('Vero');
-}  //vero, la strigna è valorizzata
-*/
+if (userColor)
+    console.log('Color found');
+else
+    console.log('Default color');
+
+Output:
+
+Default color
+
+--------------------------------------------------
+
+TRUTHY (considerati true)
+
+'Cristiano'
+'Hello'
+1
+-1
+[]
+{}
+'0'
+'false'
+
+Esempio:
+
+if ('Cristiano')
+    console.log('Vero');
+
+Output:
+
+Vero
+
+--------------------------------------------------
+
+ATTENZIONE
+
+0       -> FALSY
+'0'     -> TRUTHY
+
+false   -> FALSY
+'false' -> TRUTHY
+
+Perché con gli apici diventa una stringa.
+
+--------------------------------------------------
+
+REGOLA MENTALE
+
+Quando vedi:
+
+if (qualcosa)
+
+chiediti:
+
+"JavaScript considera questo valore Truthy o Falsy?"
+
+Truthy -> entra nell'if
+Falsy  -> entra nell'else
+
+--------------------------------------------------
+
+DA MEMORIZZARE
+
+I principali valori Falsy sono:
+
+false
+0
+''
+null
+undefined
+NaN
+
+Quasi tutto il resto è Truthy.
+
+PERCHE' ESISTE QUESTA COSA?
+
+Per scrivere codice più corto.
+
+Invece di:
+
+if (userColor !== '' &&
+    userColor !== null &&
+    userColor !== undefined)
+
+possiamo scrivere:
+
+if (userColor)
+
+--------------------------------------------------
+
+ESEMPIO PRATICO
+
+let username = 'Cristiano';
+
+if (username)
+    console.log('Utente trovato');
+else
+    console.log('Utente non trovato');
+
+Output:
+
+Utente trovato
+
+---------------------------------------
+
+let username = '';
+
+if (username)
+    console.log('Utente trovato');
+else
+    console.log('Utente non trovato');
+
+Output:
+
+Utente non trovato
+
+--------------------------------------------------
+
+OPERATORE ||
+
+L'operatore OR restituisce il primo valore Truthy.
+
+Esempio:
+
+let userColor = '';
+let defaultColor = 'blue';
+
+let currentColor = userColor || defaultColor;
+
+console.log(currentColor);
+
+Output:
+
+blue
+
+Perché:
+
+userColor = ''
+
+è Falsy.
+
+Quindi JavaScript prende il valore successivo.
 
 /*
 Precedence operators è l'ordine in cui gli operatori vengono valutati in un'espressione, tipo:

@@ -116,36 +116,351 @@ aggiornarla dentro il loop
 
 
 /*
-FOR IN Loops si usa con gli oggetti ovvero:
+FOR...IN
+
+Si usa con gli OGGETTI.
+
+Restituisce le CHIAVI (properties) dell'oggetto.
+
+Esempio:
 
 const person = {
-name : 'Cristiano',
-age : 25,
-job : 'Tester'
+    name: 'Cristiano',
+    age: 25,
+    job: 'Tester'
 };
 
-Con for...in puoi visitarle una alla volta:
-
-JavaScript
 for (let key in person) {
-console.log(key);
-} 
+    console.log(key);
+}
 
-// si legge, "Per ogni proprietà presente nell'oggetto person, inserisci il nome della proprietà nella variabile key."
-- Serve per iterare le proprietà (keys) di un oggetto. (“Iterare” significa ripetere più volte un’azione)
-- Ad ogni iterazione restituisce il nome della proprietà.
-- Per accedere al valore si usa object[key].
+Output:
 
-for...in  → dentro un oggetto → restituisce le CHIAVI
-for...of  → dentro un array → restituisce i VALORI
+name
+age
+job
 
+Ho un oggetto.
 
-FOR OF 
-- Serve per iterare direttamente i valori di una collezione,  tipicamente un array.
-- È usato principalmente con array e stringhe.
-- Ad ogni iterazione restituisce il valore corrente.
+Devo guardare tutte le proprietà.
 
-ESEMPIO: const colors = ["red", "green", "blue"];
+Ah, per gli oggetti uso for...in.
+
+Ok, ora ho la proprietà.
+
+Come prendo il valore?
+
+Ah giusto, obj[key].
+
+Ora come verifico se è una stringa?
+
+Ah sì, typeof.
+
+Perfetto.
+
+function showProperties(obj) {
+    for (let key in obj) {
+
+        if (typeof obj[key] === 'string') {
+
+            console.log(key, obj[key]);
+
+        }
+    }
+}
+Lettura:
+
+"Per ogni proprietà presente nell'oggetto person, inserisci il nome della proprietà nella variabile key."
+
+--------------------------------------------------
+
+KEY
+
+Nel for...in:
+
+for (let key in person)
+
+key rappresenta il nome della proprietà corrente.
+
+Prima iterazione:
+
+key = 'name'
+
+Seconda iterazione:
+
+key = 'age'
+
+Terza iterazione:
+
+key = 'job'
+
+--------------------------------------------------
+
+OBJECT[KEY]
+
+Serve per accedere al valore di una proprietà.
+
+Esempio:
+
+person['name']
+
+restituisce:
+
+Cristiano
+
+---------------------------------------
+
+Se:
+
+key = 'name'
+
+allora:
+
+person[key]
+
+restituisce:
+
+Cristiano
+
+--------------------------------------------------
+
+FOR...IN - COSA RESTITUISCE?
+
+oggetto:
+const person = {
+    name: 'Cristiano',
+    age: 25,
+    job: 'Tester'
+};
+
+funzione:
+function showProperties(obj) {
+    for (let key in obj) {
+        console.log(key);
+    }
+}
+
+showProperties(person);
+
+for...in restituisce le CHIAVI.
+
+Esempio:
+
+for (let key in person)
+
+Output:
+
+name
+age
+job
+
+NON restituisce:
+
+Cristiano
+25
+Tester
+
+--------------------------------------------------
+
+FOR...OF
+
+Si usa principalmente con ARRAY e STRINGHE.
+
+Restituisce direttamente i VALORI.
+
+Esempio:
+
+const colors = ['red', 'green', 'blue'];
+
+for (let color of colors) {
+    console.log(color);
+}
+
+Output:
+
+red
+green
+blue
+
+--------------------------------------------------
+
+DIFFERENZA TRA FOR...IN E FOR...OF
+
+for...in  -> OGGETTI -> restituisce le CHIAVI
+
+for...of  -> ARRAY   -> restituisce i VALORI
+
+--------------------------------------------------
+
+TYPEOF
+
+Serve per conoscere il tipo di una variabile o di un valore.
+
+Esempi:
+
+typeof 'Cristiano'
+
+Output:
+
+'string'
+
+---------------------------------------
+
+typeof 2018
+
+Output:
+
+'number'
+
+---------------------------------------
+
+typeof true
+
+Output:
+
+'boolean'
+
+--------------------------------------------------
+
+STRING PROPERTIES - ESERCIZIO
+
+Abbiamo un oggetto:
+
+const movie = {
+    title: 'a',
+    releaseYear: 2018,
+    rating: 4.5,
+    director: 'b'
+};
+
+Dobbiamo mostrare SOLO le proprietà che contengono stringhe.
+
+Output atteso:
+
+title a
+director b
+
+--------------------------------------------------
+
+COME RAGIONARE
+
+L'oggetto contiene:
+
+title -> 'a'           -> string
+releaseYear -> 2018    -> number
+rating -> 4.5          -> number
+director -> 'b'        -> string
+
+Dobbiamo trovare automaticamente quali proprietà contengono stringhe.
+
+--------------------------------------------------
+
+PASSI LOGICI DELL'ESERCIZIO
+
+1. Ciclo tutte le proprietà dell'oggetto.
+
+Per questo uso:
+
+for...in
+
+--------------------------------------------------
+
+2. Ad ogni iterazione ottengo una chiave.
+
+Esempio:
+
+title
+releaseYear
+rating
+director
+
+--------------------------------------------------
+
+3. Tramite obj[key] ottengo il valore associato.
+
+Esempio:
+
+obj['title']
+
+risultato:
+
+'a'
+
+---------------------------------------
+
+obj['releaseYear']
+
+risultato:
+
+2018
+
+--------------------------------------------------
+
+4. Uso typeof per capire il tipo del valore.
+
+Esempio:
+
+typeof obj['title']
+
+risultato:
+
+'string'
+
+---------------------------------------
+
+typeof obj['releaseYear']
+
+risultato:
+
+'number'
+
+--------------------------------------------------
+
+5. Se il tipo è string, allora stampo proprietà e valore.
+
+--------------------------------------------------
+
+TAKEAWAY IMPORTANTE
+
+for...in  -> mi dà la CHIAVE
+
+obj[key]  -> mi dà il VALORE
+
+typeof    -> mi dice il TIPO del valore
+
+Queste 3 cose sono il concetto principale dell'esercizio.
+
+--------------------------------------------------
+
+ERRORI CHE HO FATTO
+
+Pensavo di usare:
+
+if movie === string
+
+oppure
+
+if obj.title !== 'number'
+
+Ma non stavo controllando il tipo del valore.
+
+Per verificare il tipo devo usare:
+
+typeof
+
+--------------------------------------------------
+
+REGOLA MENTALE
+
+Quando lavoro con un oggetto:
+
+for...in -> trovo la proprietà
+
+obj[key] -> trovo il valore
+
+typeof -> controllo il tipo del valore
+
+Se il tipo mi interessa, lo stampo.
 */
 
 
