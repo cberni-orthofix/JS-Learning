@@ -80,12 +80,13 @@ Parole chiave:
 
 SI -> ACCUMULATORE
 
+creo una variabile:
+
 let total = 0;
 
-total += valore;
+ad ogni iterazione:
 
-return total;
-
+total += valore_corrente;
 
 --------------------------------------------------
 

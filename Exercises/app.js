@@ -757,7 +757,9 @@ Exercise - Sum of Multiple 3 and 5
 
 
 funtion sum(limit) {
-for (let 1=0; i <= 0, i++)
+let sum = 0;
+
+for (let 1=0; i <= limit, i++)
 if (i % 3 === 0 || i % 5 === 0)
 sum += i;
 
@@ -791,4 +793,207 @@ Come verifico se è multiplo?
 Se è multiplo di 3 o 5?
 → aggiungo il numero a una somma
 ``
+*/
+
+
+
+
+/*
+Esercise - GRADE
+
+const marks = [80, 80, 50];
+
+// Average = 70
+
+// 1-59: F
+// 60-69: D
+// 70-79: C
+// 80-89: B
+// 90-100: A
+
+console.log(calculateGrade(marks));
+
+function calculateGrade(marks) {
+let total = 0
+
+for (let mark of marks) {   // marks = [80, 80, 50];mark = 80, mark = 80, mark = 50
+total += mark; 
+}
+
+let everage = total / marks.length // riprendo con total fuori dalla }, siccome è finito il ciclo for dato il ;
+if (everage >= 70)
+return 'C';
+
+else if (everage >= 80)
+return 'B',
+
+else if (everage >= 90)
+return 'A';
+
+else if (everage >= 60)
+return 'D';
+
+else 
+    return 'F';
+}
+
+DOMANDE DA PORSI
+
+Sto lavorando con un array?
+→ SI
+
+Devo visitare tutti gli elementi?
+→ SI
+
+→ FOR...OF
+
+Mi serve una somma finale?
+
+→ SI
+→ ACCUMULATORE
+let total = 0;
+
+--------------------------------------------------
+
+PATTERN ACCUMULATORE
+
+let total = 0;
+
+for (...) {
+    total += valore;
+}
+
+return total;
+ERRORE CHE HO FATTO
+
+let total = 0
+
+for (...) {
+    total += valore
+}
+
+poi:
+
+average = mark / 3
+
+ERRORE:
+
+mark contiene il voto corrente.
+
+La media va fatta sulla SOMMA TOTALE.
+
+--------------------------------------------------
+
+CORRETTO
+
+average = total / marks.length
+
+--------------------------------------------------
+
+.length
+
+marks.length
+
+restituisce il numero di elementi dell'array.
+
+Esempio:
+
+[80, 80, 50]
+
+marks.length
+
+risultato:
+
+3
+
+--------------------------------------------------
+
+COME CALCOLARE UNA MEDIA
+
+Formula:
+
+somma totale / numero elementi
+
+↓
+
+total / marks.length
+
+CORRETTO
+
+average = total / marks.length
+
+--------------------------------------------------
+
+.length
+
+marks.length
+
+restituisce il numero di elementi dell'array.
+
+Esempio:
+
+[80, 80, 50]
+
+marks.length
+
+risultato:
+
+3
+
+--------------------------------------------------
+DEVO SCEGLIERE TRA PIÙ FASCE?
+
+90-100 → A
+80-89  → B
+70-79  → C
+60-69  → D
+1-59   → F
+
+SI
+
+→ IF / ELSE IF / ELSE
+
+--------------------------------------------------
+
+REGOLA PRATICA
+
+Se il problema chiede:
+
+"Calcola un totale"
+
+oppure
+
+"Calcola una media"
+
+la prima cosa da chiedersi è:
+
+"Dove conservo il risultato mentre il ciclo continua?"
+
+Risposta:
+
+In un accumulatore.
+
+let total = 0;
+total += valore;
+*/
+
+
+
+/*
+Exercise STARS
+
+
+showStars(5);
+
+function showStars(rows) {
+for (i = 0; i <= 10; i++);
+pattern += '*'
+console (i + data)
+
+}
+let ??? stringhe +=???
+
+let data = i che si incrementa per ogni riga
+
+
 */
