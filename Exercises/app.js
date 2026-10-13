@@ -986,14 +986,121 @@ Exercise STARS
 showStars(5);
 
 function showStars(rows) {
-for (i = 0; i <= 10; i++);
-pattern += '*'
-console (i + data)
+    for (let i = 1; i <= rows; i++) {
+
+        let pattern = '';   // total accumula numeri, mentre pattern accumula testo 
+
+        for (let j = 1; j <= i; j++) {
+            pattern += '*';
+        }
+
+        console.log(pattern);
+    }
+}
+
+--------------------------------------------------
+
+12. DEVO RIPETERE UNA RIPETIZIONE?
+
+Esempi:
+
+- tabelle
+- matrici
+- righe e colonne
+- pattern
+- per ogni elemento devo ripetere un'altra operazione
+
+SI → FOR ANNIDATO
+
+for (...) {
+
+    for (...) {
+
+    }
 
 }
-let ??? stringhe +=???
 
-let data = i che si incrementa per ogni riga
+--------------------------------------------------
 
+FOR ESTERNO
 
+Gestisce l'insieme principale.
+
+Esempi:
+
+- righe
+- studenti
+- prodotti
+- giorni
+
+--------------------------------------------------
+
+FOR INTERNO
+
+Gestisce gli elementi dell'insieme corrente.
+
+Esempi:
+
+- colonne della riga
+- esami dello studente
+- ordini del cliente
+- ore del giorno
+
+--------------------------------------------------
+
+Regola mentale
+
+Devo ripetere qualcosa?
+
+→ FOR
+
+Per ogni iterazione devo ripetere qualcos'altro?
+
+→ FOR DENTRO FOR
+
+--------------------------------------------------
+
+Come riconoscerlo
+
+Se il problema si può leggere così:
+
+"Per ogni X fai qualcosa con tutti gli Y"
+
+allora probabilmente serve un FOR annidato.
+
+Esempi:
+
+Per ogni riga mostra tutte le colonne.
+Per ogni studente mostra tutti i voti.
+Per ogni giorno mostra tutte le ore.
+Per ogni riga costruisci tutti i caratteri.
+
+--------------------------------------------------
+
+Ruolo delle variabili
+
+for (let i = ...)
+
+i = elemento principale
+
+for (let j = ...)
+
+j = elemento interno
+
+Non rappresentano i dati.
+Rappresentano i CONTATORI delle iterazioni.
+
+--------------------------------------------------
+
+ATTENZIONE
+
+i e j NON devono diventare:
+
+- stelle
+- lettere
+- stringhe
+
+Sono quasi sempre numeri usati per contare.
+
+I dati veri vengono costruiti o letti all'interno del ciclo.
 */

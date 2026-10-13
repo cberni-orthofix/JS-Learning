@@ -26,7 +26,176 @@ Oggetti -> FOR...IN
 Array -> FOR...OF
 
 
+------------------------------------------------
+
+2.b DEVO RIPETERE UNA RIPETIZIONE?
+
+Esempi:
+
+- tabelle
+- griglie
+- matrici
+- pattern
+- righe e colonne
+- per ogni elemento devo attraversarne altri
+
+SI → FOR ANNIDATO
+
+for (...) {
+
+    for (...) {
+
+    }
+
+}
+
 --------------------------------------------------
+
+COME RICONOSCERLO
+
+Se il problema può essere letto così:
+
+"Per ogni X fai qualcosa con tutti gli Y"
+
+allora probabilmente serve un FOR dentro un FOR.
+
+Esempi:
+
+Per ogni riga mostra tutte le colonne.
+
+Per ogni studente mostra tutti i voti.
+
+Per ogni giorno mostra tutte le ore.
+
+Per ogni riga costruisci tutti i caratteri.
+
+--------------------------------------------------
+
+FOR ESTERNO
+
+Gestisce il gruppo principale.
+
+Esempi:
+
+- righe
+- studenti
+- prodotti
+- giorni
+
+--------------------------------------------------
+
+FOR INTERNO
+
+Gestisce gli elementi appartenenti al gruppo corrente.
+
+Esempi:
+
+- colonne della riga
+- voti dello studente
+- ordini del cliente
+- ore del giorno
+
+--------------------------------------------------
+
+RUOLO DELLE VARIABILI
+
+for (let i = ...)
+
+i = contatore esterno
+
+for (let j = ...)
+
+j = contatore interno
+
+ATTENZIONE:
+
+i e j non rappresentano il dato.
+
+i e j servono solo a contare le iterazioni.
+
+--------------------------------------------------
+
+ESEMPIO SHOW STARS
+
+Problema:
+
+*
+**
+***
+****
+*****
+
+Domande:
+
+Devo ripetere?
+→ SI
+
+Per ogni riga devo ripetere ancora?
+→ SI
+
+→ FOR ANNIDATO
+
+--------------------------------------------------
+
+ACCUMULATORE DI STRINGHE
+
+Come esiste:
+
+let total = 0;
+
+total += valore;
+
+esiste anche:
+
+let pattern = '';
+
+pattern += '*';
+
+--------------------------------------------------
+
+IMPORTANTE
+
+pattern += '*';
+
+NON significa:
+
+pattern diventa una stella.
+
+Significa:
+
+aggiungi una stella a quelle già presenti.
+
+Esempio:
+
+''
+
+↓
+
+'*'
+
+↓
+
+'**'
+
+↓
+
+'***'
+
+--------------------------------------------------
+
+MODELLO MENTALE
+
+FOR ESTERNO
+→ scelgo la riga
+
+FOR INTERNO
+→ costruisco il contenuto della riga
+
+console.log(...)
+→ mostro il contenuto costruito
+
+--------------------------------------------------
+
 
 3. DEVO SCEGLIERE TRA PIÙ CASI?
 
