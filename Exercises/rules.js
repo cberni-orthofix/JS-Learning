@@ -7,17 +7,14 @@ MATRICE DI RAGIONAMENTO
 - Array
 - Oggetto
 
-Se è importante identificarlo, fermati qui.
-
-
 --------------------------------------------------
 
-2. DEVO RIPETERE QUALCOSA?
+2. DEVO RIPETERE QUALCOSA O VISITARE TUTTI I NUMERI?
 
 Esempi:
 - da 1 a 10
 - da 0 a N
-- tutti gli elementi
+- SI, tutti gli elementi
 
 SI -> LOOP
 
@@ -256,7 +253,63 @@ let total = 0;
 ad ogni iterazione:
 
 total += valore_corrente;
+--------------------------------------------------
 
+6.b DEVO RICORDARE UNO STATO O UNA CONDIZIONE?
+
+Parole chiave:
+
+- trovato/non trovato
+- valido/non valido
+- primo/non primo
+- acceso/spento
+- presente/assente
+
+SI → BOOLEAN DI SUPPORTO
+
+Creo una variabile:
+
+let isValid = true;
+
+oppure
+
+let found = false;
+
+--------------------------------------------------
+
+COME RICONOSCERLO
+
+Mi serve ricordare qualcosa mentre il programma continua?
+
+→ BOOLEAN
+
+--------------------------------------------------
+
+Esempio
+
+let isPrime = true;
+
+Durante i controlli:
+
+isPrime = false;
+
+Alla fine:
+
+if (isPrime)
+    console.log(numero);
+
+--------------------------------------------------
+
+Regola mentale
+
+FOR
+→ ripeto
+
+IF
+→ decido
+
+BOOLEAN
+→ ricordo
 --------------------------------------------------
 
 7. DEVO VERIFICARE UN MULTIPLO?

@@ -990,8 +990,8 @@ function showStars(rows) {
 
         let pattern = '';   // total accumula numeri, mentre pattern accumula testo 
 
-        for (let j = 1; j <= i; j++) {
-            pattern += '*';
+        for (let j = 1; j <= i; j++) { // meglio usare 0, anzichè 1, siccome in programmazione si inizia a contare da 0.
+            pattern += '*'; // total accumula numeri, mentre pattern con '*' accumula testo nella console
         }
 
         console.log(pattern);
@@ -1103,4 +1103,131 @@ i e j NON devono diventare:
 Sono quasi sempre numeri usati per contare.
 
 I dati veri vengono costruiti o letti all'interno del ciclo.
+*/
+
+
+
+
+
+
+
+/*
+Exercise - Prime Number
+
+
+Prime (whose factors are noly 1 and itself)
+Composite, possono essere divisi anche con altri numeri.
+
+12 = 1,2,3,4,6,12 -> can be divided evenly by its factors
+11 = 1,11
+13 = 1,13
+
+Takeaway
+
+FOR = quante volte ripetere
+
+IF = quale decisione prendere
+
+BOOLEAN = cosa ricordare
+
+showPrimes(20);
+
+function showPrimes(limit) {
+for (let i = 2; i <= limit; i++) {
+let isPrime = true
+
+    for (let j = 2; j < i; j++){
+        if (i % j === 0)
+        isPrime = false
+    }
+               
+}
+    if (isPrime)
+            console.log(i)
+    }
+}
+    --------------------------------------------------
+
+SHOW PRIMES
+
+Problema:
+
+Mostrare tutti i numeri primi fino ad un limite.
+
+Esempio:
+
+showPrimes(20)
+
+Output:
+
+2
+3
+5
+7
+11
+13
+17
+19
+
+--------------------------------------------------
+
+Domande
+
+Devo visitare tutti i numeri?
+→ FOR
+
+Per ogni numero devo controllare altri numeri?
+→ FOR ANNIDATO
+
+Devo verificare divisibilità?
+→ %
+
+Devo ricordare se ho trovato un divisore?
+→ BOOLEAN
+
+--------------------------------------------------
+
+Strumenti
+
+FOR
+FOR ANNIDATO
+IF
+%
+BOOLEAN
+
+--------------------------------------------------
+
+Pattern mentale
+
+Per ogni numero
+
+    assumo che sia primo
+
+    provo tutti i possibili divisori
+
+        se trovo un divisore
+
+            non è primo
+
+    se è ancora primo
+
+        stampalo
+
+--------------------------------------------------
+
+Variabili
+
+i = numero che sto verificando
+
+j = divisore che sto provando
+
+isPrime = memoria logica
+
+true  → per ora è primo
+
+false → ho trovato un divisore
+
+--------------------------------------------------
+
+
 */
